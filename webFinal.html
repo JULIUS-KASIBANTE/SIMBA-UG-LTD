@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sweet Melons - Fresh Watermelon Adverts</title>
+
+  <!-- SEO meta tags -->
+  <meta name="description" content="Buy fresh & juicy watermelons direct from farm. Order online or via WhatsApp. Best quality, fast delivery." />
+  <meta name="keywords" content="watermelon, fresh fruit, buy watermelon, sweet melon, fruit delivery" />
+  <meta name="author" content="Sweet Melons UG" />
+
+  <!-- Google Fonts: Poppins (modern sans) + Merriweather (serif) -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* --- Fonts & Reset --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fcefe3 0%, #e6fff7 100%);
+      color: #184d47;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: #e94f37;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+      color: #b23724;
+      outline: none;
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 1rem;
+      box-shadow: 0 8px 15px rgba(27, 73, 62, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    img:hover,
+    img:focus {
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Merriweather', serif;
+      color: #184d47;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+    }
+
+    h1 {
+      font-size: 3.6rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 10px rgba(227, 79, 55, 0.3);
+    }
+
+    h2.section-title {
+      font-weight: 700;
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 2.2rem;
+      position: relative;
+      color: #184d47;
+    }
+
+    h2.section-title::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 5px;
+      background: linear-gradient(90deg, #e94f37, #2e856e);
+      margin: 0.7rem auto 0;
+      border-radius: 5px;
+      box-shadow: 0 3px 6px rgba(233, 79, 55, 0.4);
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #2f5a53;
+      margin-bottom: 1.5rem;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      background-color: #2e856e;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(46, 133, 110, 0.5);
+    }
+
+    nav .logo {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #f8f1e7;
+      font-family: 'Merriweather', serif;
+      cursor: default;
+      user-select: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.5rem 0;
+      transition: border-bottom 0.3s ease;
+      border-bottom: 3px solid transparent;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      border-bottom: 3px solid #f0543d;
+      outline: none;
+    }
+
+    nav .menu-toggle {
+      display: none;
+      font-size: 2.4rem;
+      background: none;
+      border: none;
+      color: #f8f1e7;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    nav .menu-toggle:focus {
+      outline: 3px solid #f0543d;
+      outline-offset: 3px;
+    }
+
+    /* --- Hero Section --- */
+    header {
+      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      color: #f8f1e7;
+      padding: 0 1rem;
+      box-shadow: inset 0 0 0 2000px rgba(46, 133, 110, 0.7);
+      border-radius: 0 0 3rem 3rem;
+    }
+
+    header > div {
+      max-width: 600px;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin-bottom: 1.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 12px #f0543d;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 8px #f8f1e7aa;
+    }
+
+    header a.cta {
+      font-size: 1.3rem;
+      padding: 18px 56px;
+      border-radius: 50px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #f0543d, #2e856e);
+      box-shadow: 0 10px 20px rgba(240, 84, 61, 0.7);
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+      display: inline-block;
+      color: #f8f1e7;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      user-select: none;
+    }
+
+    header a.cta:hover,
+    header a.cta:focus {
+      background: linear-gradient(90deg, #2e856e, #f0543d);
+      box-shadow: 0 12px 25px rgba(46, 133, 110, 0.9);
+      outline: none;
+      text-decoration: none;
+    }
+
+    /* --- Main Content --- */
+    main {
+      flex-grow: 1;
+      max-width: 1100px;
+      margin: 4rem auto 6rem;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 4.5rem;
+    }
+
+    /* --- Products Grid --- */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .product-card {
+      background: linear-gradient(145deg, #f8fff7, #d7f0e3);
+      border-radius: 2rem;
+      box-shadow: 10px 10px 20px #b0d0c2, -10px -10px 20px #ffffff;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+
+    .product-card:focus,
+    .product-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 15px 15px 35px #a2c4b2, -15px -15px 35px #e6fff7;
+      outline: none;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 5px solid #f0543d;
+      border-radius: 2rem 2rem 0 0;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover img,
+    .product-card:focus img {
+      transform: scale(1.12);
+    }
+
+    .product-info {
+      padding: 1.8rem 1.6rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+      color: #184d47;
+    }
+
+    .product-info p {
+      color: #2f5a53;
+      margin-bottom: 1.4rem;
+      font-weight: 500;
+    }
+
+    .price {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #f0543d;
+      text-align: right;
+      letter-spacing: 0.02em;
+    }
+
+    /* --- Gallery --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      border-radius: 1.5rem;
+      user-select: none;
+    }
+
+    .gallery-grid img {
+      border-radius: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(27, 73, 62, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .gallery-grid img:hover,
+    .gallery-grid img:focus {
+      transform: scale(1.1);
+      box-shadow: 0 15px 40px rgba(27, 73, 62, 0.3);
+      outline: none;
+    }
+
+    /* --- Testimonials --- */
+    .testimonials {
+      background: #e6fff7;
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      box-shadow: 10px 10px 25px #b0d0c2, -10px -10px 25px #ffffff;
+      max-width: 720px;
+      margin: 0 auto;
+      user-select: none;
+    }
+
+    .testimonial {
+      margin-bottom: 2.4rem;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #1a3a32;
+      position: relative;
+      padding-left: 2.2rem;
+      line-height: 1.5;
+    }
+
+    .testimonial:last-child {
+      margin-bottom: 0;
+    }
+
+    .testimonial::before {
+      content: "“";
+      position: absolute;
+      left: 0;
+      top: -0.4rem;
+      font-size: 3.6rem;
+      color: #f0543d;
+      font-weight: 900;
+      font-family: 'Merriweather', serif;
+      line-height: 1;
+    }
+
+    .testimonial cite {
+      display: block;
+      margin-top: 0.8rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #2e856e;
+      text-align: right;
+      font-style: normal;
+      user-select: text;
+    }
+
+    /* --- Newsletter --- */
+    .newsletter {
+      text-align: center;
+      background: #f8fff7;
+      padding: 3.5rem 2rem 3.5rem 2rem;
+      border-radius: 2rem;
+      box-shadow: 10px 10px 20px #b0d0c2, -10px -10px 20px #ffffff;
+      max-width: 640px;
+      margin: 0 auto;
+      user-select: none;
+    }
+
+    .newsletter h2 {
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+      color: #184d47;
+      user-select: text;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 1rem 1.3rem;
+      font-size: 1.15rem;
+      width: 75%;
+      max-width: 380px;
+      border: 3px solid #e94f37;
+      border-radius: 50px;
+      margin-right: 1rem;
+      font-weight: 600;
+      transition: border-color 0.3s ease;
+      box-shadow: inset 3px 3px 7px #fcd9cc;
+      user-select: text;
+    }
+
+    .newsletter input[type="email"]:focus {
+      outline: none;
+      border-color: #2e856e;
+      box-shadow: 0 0 8px #2e856eaa;
+    }
+
+    .newsletter button {
+      padding: 1rem 2.4rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      background: linear-gradient(90deg, #e94f37, #2e856e);
+      color: #f8f1e7;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(233, 79, 55, 0.6);
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+      user-select: none;
+    }
+
+    .newsletter button:hover,
+    .newsletter button:focus {
+      background: linear-gradient(90deg, #2e856e, #e94f37);
+      box-shadow: 0 12px 30px rgba(46, 133, 110, 0.9);
+      outline: none;
+    }
+
+    .newsletter p.message {
+      margin-top: 1.3rem;
+      font-weight: 700;
+      color: #2e856e;
+      user-select: text;
+    }
+
+    /* --- Contact Form --- */
+    form {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #e6fff7;
+      padding: 2.8rem 2.8rem;
+      border-radius: 2rem;
+      box-shadow: 10px 10px 25px #b0d0c2, -10px -10px 25px #ffffff;
+      user-select: none;
+    }
+
+    label {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #184d47;
+      user-select: text;
+    }
+
+    input[type=text],
+    input[type=tel],
+    textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.8rem;
+      border: 3px solid #e94f37;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      resize: vertical;
+      box-shadow: inset 2px 2px 8px #fcd9cc;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: text;
+    }
+
+    input[type=text]:focus,
+    input[type=tel]:focus,
+    textarea:focus {
+      border-color: #2e856e;
+      box-shadow: 0 0 10px #2e856eaa;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    .form-status {
+      font-weight: 700;
+      text-align: center;
+      margin-top: 1.3rem;
+      user-select: text;
+    }
+
+    .form-status.success {
+      color: #2e856e;
+    }
+
+    .form-status.error {
+      color: #e94f37;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background-color: #2e856e;
+      color: #f8f1e7;
+      padding: 1.8rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      box-shadow: 0 -5px 20px rgba(46, 133, 110, 0.7);
+      user-select: none;
+      border-radius: 0 0 3rem 3rem;
+    }
+
+    footer a {
+      margin: 0 0.7rem;
+      font-weight: 600;
+      color: #f8f1e7;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      color: #e94f37;
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.6rem;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #2e856e;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 220px;
+        border-radius: 1rem;
+        padding: 1rem 1.5rem;
+        box-shadow: 5px 8px 22px rgba(46, 133, 110, 0.5);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation bar -->
+  <nav aria-label="Primary navigation">
+    <div class="logo" tabindex="0">SIMBA WATERMELONS UGANDA LIMITED</div>
+
+    <!-- Hamburger menu button for small screens -->
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">☰</button>
+
+    <!-- Navigation links -->
+    <ul id="nav-menu">
+      <li><a href="#hero" tabindex="0">Home</a></li>
+      <li><a href="#products" tabindex="0">Shop</a></li>
+      <li><a href="#gallery" tabindex="0">Gallery</a></li>
+      <li><a href="#testimonials" tabindex="0">Testimonials</a></li>
+      <li><a href="#newsletter" tabindex="0">Newsletter</a></li>
+      <li><a href="#contact" tabindex="0">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero banner with background image and call to action -->
+  <header id="hero" role="banner">
+    <div>
+      <h1>Fresh & Juicy Watermelons 🍉</h1>
+      <p>Straight from the farm – Pure sweetness in every bite.</p>
+      <!-- Update the WhatsApp number below to your real number -->
+      <a href="https://wa.me/256774270804" class="cta" target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <!-- Products Section -->
+    <section id="products" aria-labelledby="products-title">
+      <h2 id="products-title" class="section-title">Our Melons</h2>
+
+      <!-- Grid of product cards -->
+      <div class="products-grid" role="list">
+        <!-- Each product as an article for accessibility -->
+        <article class="product-card" role="listitem" tabindex="0">
+          <img src="10.jpg" alt="Whole Watermelon" loading="lazy" />
+          <div class="product-info">
+            <h3>Whole Watermelon</h3>
+            <p>Approx 5-7 kg – Sweet, juicy, and fresh.</p>
+            <div class="price">UGX 8,000</div>
+          </div>
+        </article>
+
+        <article class="product-card" role="listitem" tabindex="0">
+          <img src="6.jpg" alt="Sliced Melon Pack" loading="lazy" />
+          <div class="product-info">
+            <h3>Sliced Melon Pack</h3>
+            <p>Ready to eat, freshly packed slices.</p>
+            <div class="price">UGX 5,000</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section id="gallery" aria-labelledby="gallery-title">
+      <h2 id="gallery-title" class="section-title">Melon Moments Gallery</h2>
+      <div class="gallery-grid">
+        <!-- Use your own images or Unsplash random watermelon photos -->
+        <img src="7.jpg" alt="Watermelon Image 1" loading="lazy" tabindex="0" />
+        <img src="9.jpg" alt="Watermelon Image 2" loading="lazy" tabindex="0" />
+        <img src="3.jpg" alt="Watermelon Image 3" loading="lazy" tabindex="0" />
+        <img src="1.jpg" alt="Watermelon Image 4" loading="lazy" tabindex="0" />
+        <img src="8.jpg" alt="Watermelon Image 5" loading="lazy" tabindex="0" />
+        <img src="5.jpg" alt="Watermelon Image 6" loading="lazy" tabindex="0" />
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" aria-labelledby="testimonials-title" class="testimonials">
+      <h2 id="testimonials-title" class="section-title">What Our Customers Say</h2>
+
+      <!-- Each testimonial -->
+      <article class="testimonial" tabindex="0">
+        <p>“The sweetest watermelon I've ever tasted! Delivery was quick and friendly.”</p>
+        <cite>- Julie K.</cite>
+      </article>
+      <article class="testimonial" tabindex="0">
+        <p>“Excellent quality and great service. Highly recommend Sweet Melons!”</p>
+        <cite>- Ashix Media.</cite>
+      </article>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section id="newsletter" aria-labelledby="newsletter-title" class="newsletter">
+      <h2 id="newsletter-title" class="section-title">Subscribe to Our Newsletter</h2>
+      <!-- Simple form to capture email -->
+      <form id="newsletter-form" aria-label="Newsletter signup form">
+        <input type="email" id="email" name="email" placeholder="Your Email Address" aria-required="true" required />
+        <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+      </form>
+      <p class="message" aria-live="polite"></p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contact Us</h2>
+      <form id="contact-form" aria-label="Contact form">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" placeholder="Your Full Name" aria-required="true" required />
+
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+256 77 012 3456" aria-required="true" required pattern="^\+?\d{7,15}$" title="Enter a valid phone number" />
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Your message here..." aria-required="true" required></textarea>
+
+        <button type="submit">Send Message</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Simba Melons Uganda | 
+    <a href="https://www.facebook.com/simbamelons" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a> | 
+    <a href="https://www.instagram.com/simbamelons" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a> | 
+    <a href="https://twitter.com/simbalons" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
+  </footer>
+
+  <script>
+    // Responsive Nav Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navMenu.classList.toggle('show');
+    });
+
+    // Newsletter subscription form handler (dummy)
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterMessage = document.querySelector('.newsletter .message');
+
+    newsletterForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const emailInput = newsletterForm.email.value.trim();
+      if (emailInput && emailInput.includes('@')) {
+        newsletterMessage.textContent = 'Thank you for subscribing!';
+        newsletterForm.reset();
+        setTimeout(() => {
+          newsletterMessage.textContent = '';
+        }, 5000);
+      } else {
+        newsletterMessage.textContent = 'Please enter a valid email address.';
+      }
+    });
+
+    // Contact form handler (dummy)
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.querySelector('.form-status');
+
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      // Simple validation
+      const name = contactForm.name.value.trim();
+      const phone = contactForm.phone.value.trim();
+      const message = contactForm.message.value.trim();
+
+      if (!name || !phone || !message) {
+        formStatus.textContent = 'Please fill in all required fields.';
+        formStatus.className = 'form-status error';
+        return;
+      }
+
+      // Simulate successful submission
+      formStatus.textContent = 'Message sent successfully! We will contact you soon.';
+      formStatus.className = 'form-status success';
+      contactForm.reset();
+
+      // Clear message after 6 seconds
+      setTimeout(() => {
+        formStatus.textContent = '';
+        formStatus.className = 'form-status';
+      }, 6000);
+    });
+  </script>
+</body>
+
+</html>
